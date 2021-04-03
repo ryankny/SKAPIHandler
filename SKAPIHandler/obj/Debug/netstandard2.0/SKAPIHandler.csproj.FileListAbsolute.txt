@@ -1,0 +1,9 @@
+C:\Users\Ryan Kenny\source\repos\SKAPIHandler\SKAPIHandler\bin\Debug\netstandard2.0\SKAPIHandler.deps.json
+C:\Users\Ryan Kenny\source\repos\SKAPIHandler\SKAPIHandler\bin\Debug\netstandard2.0\SKAPIHandler.dll
+C:\Users\Ryan Kenny\source\repos\SKAPIHandler\SKAPIHandler\bin\Debug\netstandard2.0\SKAPIHandler.pdb
+C:\Users\Ryan Kenny\source\repos\SKAPIHandler\SKAPIHandler\obj\Debug\netstandard2.0\SKAPIHandler.csprojAssemblyReference.cache
+C:\Users\Ryan Kenny\source\repos\SKAPIHandler\SKAPIHandler\obj\Debug\netstandard2.0\SKAPIHandler.AssemblyInfoInputs.cache
+C:\Users\Ryan Kenny\source\repos\SKAPIHandler\SKAPIHandler\obj\Debug\netstandard2.0\SKAPIHandler.AssemblyInfo.cs
+C:\Users\Ryan Kenny\source\repos\SKAPIHandler\SKAPIHandler\obj\Debug\netstandard2.0\SKAPIHandler.csproj.CoreCompileInputs.cache
+C:\Users\Ryan Kenny\source\repos\SKAPIHandler\SKAPIHandler\obj\Debug\netstandard2.0\SKAPIHandler.dll
+C:\Users\Ryan Kenny\source\repos\SKAPIHandler\SKAPIHandler\obj\Debug\netstandard2.0\SKAPIHandler.pdb
