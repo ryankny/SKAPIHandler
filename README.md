@@ -1,4 +1,4 @@
-# SKDatabaseHandler
+# SKAPIHandler
 A simple, easy to use .NET standard class library wrapper for sending REST HTTP requests.
 
 - **Single-line sending HTTP requests**
