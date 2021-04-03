@@ -6,6 +6,14 @@ namespace SKAPIHandler
 {
     public static class SKAPIHandler
     {
+        /// <summary>
+        /// Function to send a REST HTTP request with custom headers and content (dynamic depending on if its XML or JSON)
+        /// </summary>
+        /// <param name="Client">HttpClient wrapper class</param>
+        /// <param name="URI">Service endpoint for the request</param>
+        /// <param name="Method">REST method (GET, POST, DELETE, PUT)</param>
+        /// <param name="Headers">Custom headers in an array to be pushed into the HttpRequestMessage</param>
+        /// <param name="Content">Content wrapper class for the request content</param>
         public static async Task<ServiceResponse> SendRequestAsync(ServiceClient Client, string URI, HttpMethod Method, ServiceHeader[] Headers, RequestContent Content)
         {
             HttpClient RequestClient = Client.GetClient();
@@ -27,16 +35,25 @@ namespace SKAPIHandler
             }
         }
 
+        /// <summary>
+        /// Function to create a new instance of HttpRequestMessage using provided parameters and returning this newly created object
+        /// </summary>
         private static HttpRequestMessage BuildRequestMessage(string URI, HttpMethod Method, ServiceHeader[] Headers, RequestContent Content)
         {
             HttpRequestMessage Message = new HttpRequestMessage();
 
+            if(Method == null) { throw new Exception("Request method cannot be null"); }
             Message.Method = Method;
+
+            if (URI == null) { throw new Exception("Request URI cannot be null"); }
             Message.RequestUri = new Uri(URI);
 
-            foreach (ServiceHeader Header in Headers)
+            if(Headers != null)
             {
-                Message.Headers.Add(Header.Name, Header.Value);
+                foreach (ServiceHeader Header in Headers)
+                {
+                    Message.Headers.Add(Header.Name, Header.Value);
+                }
             }
 
             if (Content != null)
