@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace SKAPIHandler
 {
-    public static class SKAPIHandler
+    public static class APIHandler
     {
         /// <summary>
         /// Function to send a REST HTTP request with custom headers and content (dynamic depending on if its XML or JSON)
@@ -14,7 +14,7 @@ namespace SKAPIHandler
         /// <param name="Method">REST method (GET, POST, DELETE, PUT)</param>
         /// <param name="Headers">Custom headers in an array to be pushed into the HttpRequestMessage</param>
         /// <param name="Content">Content wrapper class for the request content</param>
-        public static async Task<ServiceResponse> SendRequestAsync(ServiceClient Client, string URI, HttpMethod Method, ServiceHeader[] Headers, RequestContent Content)
+        public static async Task<ServiceResponse> SendRequestAsync(ServiceClient Client, string URI, HttpMethod Method, ServiceHeader[] Headers = null, RequestContent Content = null)
         {
             HttpClient RequestClient = Client.GetClient();
             HttpResponseMessage RequestResponse = null;
@@ -46,6 +46,7 @@ namespace SKAPIHandler
             Message.Method = Method;
 
             if (URI == null) { throw new Exception("Request URI cannot be null"); }
+            if (string.IsNullOrEmpty(URI)) { throw new Exception("Request URI cannot be empty"); }
             Message.RequestUri = new Uri(URI);
 
             if(Headers != null)
